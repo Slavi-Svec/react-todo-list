@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/layout/Header';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
-  
+import uuid from 'uuid';
 import './App.css';
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
            },
            {
             id: 2,
-            title: 'Go to markets',
+            title: 'edit videos at 1.15',
             completed: false
            },
            {
@@ -38,6 +38,8 @@ class App extends Component {
     delTodo = (id) => {
         this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] });
     }
+
+    // Add todo 
     addTodo = (title) => {
         const newTodo = {
             id: 4,
